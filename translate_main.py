@@ -3,9 +3,12 @@ from googletrans import Translator
 
 
 def translate_text(text, dest_lang):
-    translator = Translator()
-    translated_text = translator.translate(text, dest=dest_lang)
-    return translated_text.text
+    try:
+        translator = Translator()
+        translated_text = translator.translate(text, dest=dest_lang)
+        return translated_text.text
+    except ConnectionError:
+        return "Ops...!:", "Erro na chamada da API!"
 
 
 def main():
