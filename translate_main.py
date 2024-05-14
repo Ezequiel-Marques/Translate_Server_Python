@@ -2,6 +2,7 @@ import socket
 from googletrans import Translator
 
 
+# pip install googletrans==3.1.0a0
 def translate_text(text, dest_lang):
     try:
         translator = Translator()
